@@ -9,7 +9,7 @@
         android:id="@+id/etQuantity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Quantity"
+        android:hint="Cantidad"
         android:inputType="number" />
 
 </LinearLayout>

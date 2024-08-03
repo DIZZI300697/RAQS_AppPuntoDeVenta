@@ -9,25 +9,25 @@
         android:id="@+id/etProductName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Product Name" />
+        android:hint="Nombre del Producto" />
 
     <EditText
         android:id="@+id/etProductPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Product Price" />
+        android:hint="Precio" />
 
     <EditText
         android:id="@+id/etProductQuantity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Product Quantity" />
+        android:hint="Cantidad" />
 
     <Button
         android:id="@+id/btnSelectImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select Image" />
+        android:text="Seleccionar imagen" />
 
     <ImageView
         android:id="@+id/ivProductImage"
@@ -42,6 +42,6 @@
         android:id="@+id/btnSaveProduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Product" />
+        android:text="Guardar Producto" />
 
 </LinearLayout>

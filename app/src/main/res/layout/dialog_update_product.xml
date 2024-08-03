@@ -9,18 +9,18 @@
         android:id="@+id/etProductId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Product ID" />
+        android:hint="ID del Producto" />
 
     <EditText
         android:id="@+id/etProductPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Price" />
+        android:hint="Precio" />
 
     <EditText
         android:id="@+id/etProductQuantity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Quantity" />
+        android:hint="Cantidad" />
 
 </LinearLayout>

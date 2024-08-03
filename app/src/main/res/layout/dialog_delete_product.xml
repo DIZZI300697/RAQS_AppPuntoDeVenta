@@ -9,6 +9,6 @@
         android:id="@+id/etProductId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Product ID" />
+        android:hint="ID del Producto" />
 
 </LinearLayout>

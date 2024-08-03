@@ -9,18 +9,18 @@
         android:id="@+id/btnInsertProduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Insert Product" />
+        android:text="Insertar Producto" />
 
     <Button
         android:id="@+id/btnDeleteProduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Delete Product" />
+        android:text="Eliminar Producto" />
 
     <Button
         android:id="@+id/btnUpdateProduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update Product" />
+        android:text="Actualizar Producto" />
 
 </LinearLayout>

@@ -9,18 +9,18 @@
         android:id="@+id/btnGoToSale"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Go to Sale" />
+        android:text="Venta" />
 
     <Button
         android:id="@+id/btnGoToInventory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Go to Inventory" />
+        android:text="Inventario" />
 
     <Button
         android:id="@+id/btnExit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Exit" />
+        android:text="Salir" />
 
 </LinearLayout>
