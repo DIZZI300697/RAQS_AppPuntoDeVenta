@@ -58,15 +58,19 @@ public class InsertProductActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null) {
             Uri imageUri = data.getData();
-            try {
-                InputStream imageStream = getContentResolver().openInputStream(imageUri);
-                Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-                ivProductImage.setImageBitmap(selectedImage);
-                imageBase64 = encodeImage(selectedImage);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
+            if (imageUri != null) {
+                try {
+                    InputStream imageStream = getContentResolver().openInputStream(imageUri);
+                    Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+                    ivProductImage.setImageBitmap(selectedImage);
+                    imageBase64 = encodeImage(selectedImage);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                Toast.makeText(this, "Error loading image", Toast.LENGTH_SHORT).show();
             }
         }
     }

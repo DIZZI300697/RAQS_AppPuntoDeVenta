@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -35,6 +36,9 @@ public class SaleActivity extends AppCompatActivity {
         tvTotalAmount = findViewById(R.id.tvTotalAmount);
 
         loadProducts();
+
+        Button btnFinalizeSale = findViewById(R.id.btnFinalizeSale); // Asegúrate de que este botón esté en tu archivo XML
+        btnFinalizeSale.setOnClickListener(v -> finalizeSale());
     }
 
     private void loadProducts() {
@@ -96,7 +100,8 @@ public class SaleActivity extends AppCompatActivity {
         db.close();
     }
 
-    public void finalizeSale(View view) {
-        startActivity(new Intent(this, FinalizeSaleActivity.class));
+    public void finalizeSale() {
+        Intent intent = new Intent(this, FinalizeSaleActivity.class);
+        startActivity(intent);
     }
 }

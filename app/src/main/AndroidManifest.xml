@@ -29,6 +29,7 @@
         <activity android:name=".UpdateProductDialog" />
         <activity android:name=".SaleActivity" />
         <activity android:name=".FinalizeSaleActivity" />
+        <activity android:name=".MainMenuActivity" />
 
     </application>
 

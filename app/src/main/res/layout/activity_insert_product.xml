@@ -29,6 +29,15 @@
         android:layout_height="wrap_content"
         android:text="Select Image" />
 
+    <ImageView
+        android:id="@+id/ivProductImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Selected Image"
+        android:scaleType="centerInside"
+        android:background="#E0E0E0" />
+
     <Button
         android:id="@+id/btnSaveProduct"
         android:layout_width="match_parent"
