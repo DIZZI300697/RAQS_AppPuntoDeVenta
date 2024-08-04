@@ -1,8 +1,10 @@
 package com.example.raqs_apppuntodeventa;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -25,6 +27,9 @@ public class FinalizeSaleActivity extends AppCompatActivity {
 
         lvSaleDetails = findViewById(R.id.lvSaleDetails);
         tvTotalAmount = findViewById(R.id.tvTotalAmount);
+        Button btnReturnToMenu = findViewById(R.id.btnReturnToMenu);
+
+        btnReturnToMenu.setOnClickListener(v -> goToMainMenu());
 
         loadSaleDetails();
     }
@@ -55,5 +60,12 @@ public class FinalizeSaleActivity extends AppCompatActivity {
         saleDetailAdapter = new SaleDetailAdapter(this, saleDetailList);
         lvSaleDetails.setAdapter(saleDetailAdapter);
         tvTotalAmount.setText(String.format("Total: $%.2f", totalAmount));
+    }
+
+    private void goToMainMenu() {
+        Intent intent = new Intent(this, MainMenuActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
     }
 }

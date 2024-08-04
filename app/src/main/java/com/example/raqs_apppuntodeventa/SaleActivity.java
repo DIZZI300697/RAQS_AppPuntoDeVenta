@@ -71,7 +71,7 @@ public class SaleActivity extends AppCompatActivity {
 
         builder.setView(dialogView)
                 .setTitle("Introduzca la cantidad")
-                .setPositiveButton("Add", (dialog, which) -> {
+                .setPositiveButton("Agregar", (dialog, which) -> {
                     String quantityStr = etQuantity.getText().toString().trim();
                     if (!quantityStr.isEmpty()) {
                         int quantity = Integer.parseInt(quantityStr);
