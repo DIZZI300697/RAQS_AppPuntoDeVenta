@@ -3,24 +3,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@drawable/fondo4"
+    android:gravity="center"
+    android:padding="30dp">
 
     <Button
         android:id="@+id/btnInsertProduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#228B22"
+        android:textColor="#FFF8E7"
+        android:textSize="17sp"
+        android:layout_marginBottom="15dp"
         android:text="Insertar Producto" />
 
     <Button
         android:id="@+id/btnDeleteProduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#800020"
+        android:textColor="#FADCD9"
+        android:textSize="17sp"
+        android:layout_marginBottom="15dp"
         android:text="Eliminar Producto" />
 
     <Button
         android:id="@+id/btnUpdateProduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#4A4A4A"
+        android:textColor="#F5F5DC"
+        android:textSize="17sp"
+        android:layout_marginBottom="15dp"
         android:text="Actualizar Producto" />
 
 </LinearLayout>

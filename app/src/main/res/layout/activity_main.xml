@@ -3,31 +3,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@drawable/fondo"
+    android:gravity="center"
+    android:padding="30dp">
 
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Usuario" />
+        android:hint="Usuario"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Contraseña"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="#A89F96"
+        android:textColor="#3E2723"
+        android:textSize="17sp"
         android:text="Login" />
 
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#C47E5A"
+        android:textColor="#3E2723"
+        android:textSize="17sp"
         android:text="Registro" />
 
 </LinearLayout>

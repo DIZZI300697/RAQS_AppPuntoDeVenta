@@ -3,30 +3,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@drawable/fondo5"
+    android:padding="20dp">
 
     <EditText
         android:id="@+id/etProductName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:hint="Nombre del Producto" />
 
     <EditText
         android:id="@+id/etProductPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:hint="Precio" />
 
     <EditText
         android:id="@+id/etProductQuantity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:hint="Cantidad" />
 
     <Button
         android:id="@+id/btnSelectImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#800020"
+        android:textColor="@color/white"
+        android:textSize="17sp"
         android:text="Seleccionar imagen" />
 
     <ImageView
@@ -36,12 +46,16 @@
         android:layout_marginTop="16dp"
         android:contentDescription="Selected Image"
         android:scaleType="centerInside"
+        android:layout_marginBottom="15dp"
         android:background="#E0E0E0" />
 
     <Button
         android:id="@+id/btnSaveProduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#008080"
+        android:textColor="@color/white"
+        android:textSize="17sp"
         android:text="Guardar Producto" />
 
 </LinearLayout>

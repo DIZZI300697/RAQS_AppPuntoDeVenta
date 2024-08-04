@@ -9,18 +9,24 @@
         android:id="@+id/etProductId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:hint="ID del Producto" />
 
     <EditText
         android:id="@+id/etProductPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:hint="Precio" />
 
     <EditText
         android:id="@+id/etProductQuantity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:hint="Cantidad" />
 
 </LinearLayout>
