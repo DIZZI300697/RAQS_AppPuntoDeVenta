@@ -2,7 +2,7 @@ package com.example.raqs_apppuntodeventa;
 
 public class SaleDetail {
     private int productId;
-    private String productName; // Campo adicional para el nombre del producto
+    private String productName;
     private int quantity;
     private double price;
     private double amount;

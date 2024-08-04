@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // Check database for user credentials
         SQLiteDatabase db = new DatabaseHelper(this).getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM users WHERE username = ? AND password = ?", new String[]{username, password});
         if (cursor.moveToFirst()) {
