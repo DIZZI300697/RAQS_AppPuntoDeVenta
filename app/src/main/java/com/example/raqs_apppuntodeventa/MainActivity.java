@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         String password = etPassword.getText().toString().trim();
 
         if (username.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Por favor rellena todos los campos", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             cursor.close();
             db.close();
-            Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Credenciales no válidas", Toast.LENGTH_SHORT).show();
         }
     }
 

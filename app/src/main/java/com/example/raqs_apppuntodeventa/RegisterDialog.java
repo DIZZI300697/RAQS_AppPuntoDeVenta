@@ -26,10 +26,10 @@ public class RegisterDialog extends AppCompatDialogFragment {
         etPassword = view.findViewById(R.id.etPassword);
 
         builder.setView(view)
-                .setTitle("Register")
-                .setNegativeButton("Cancel", (dialogInterface, i) -> {
+                .setTitle("Registro")
+                .setNegativeButton("Cancelar", (dialogInterface, i) -> {
                 })
-                .setPositiveButton("Register", (dialogInterface, i) -> registerUser());
+                .setPositiveButton("Registrarte", (dialogInterface, i) -> registerUser());
 
         return builder.create();
     }
@@ -39,13 +39,13 @@ public class RegisterDialog extends AppCompatDialogFragment {
         String password = etPassword.getText().toString().trim();
 
         if (username.isEmpty() || password.isEmpty()) {
-            Toast.makeText(getActivity(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Por favor rellena todos los campos", Toast.LENGTH_SHORT).show();
             return;
         }
 
         SQLiteDatabase db = new DatabaseHelper(getActivity()).getWritableDatabase();
         db.execSQL("INSERT INTO users (username, password) VALUES (?, ?)", new Object[]{username, password});
         db.close();
-        Toast.makeText(getActivity(), "User registered successfully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Usuario registrado exitosamente", Toast.LENGTH_SHORT).show();
     }
 }

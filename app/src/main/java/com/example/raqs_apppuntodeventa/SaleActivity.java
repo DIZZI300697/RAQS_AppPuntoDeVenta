@@ -3,7 +3,6 @@ package com.example.raqs_apppuntodeventa;
 import android.content.Intent;
 import android.app.AlertDialog;
 import android.content.ContentValues;
-import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -37,7 +36,7 @@ public class SaleActivity extends AppCompatActivity {
 
         loadProducts();
 
-        Button btnFinalizeSale = findViewById(R.id.btnFinalizeSale); // Asegúrate de que este botón esté en tu archivo XML
+        Button btnFinalizeSale = findViewById(R.id.btnFinalizeSale);
         btnFinalizeSale.setOnClickListener(v -> finalizeSale());
     }
 
@@ -71,20 +70,25 @@ public class SaleActivity extends AppCompatActivity {
         EditText etQuantity = dialogView.findViewById(R.id.etQuantity);
 
         builder.setView(dialogView)
-                .setTitle("Enter Quantity")
+                .setTitle("Introduzca la cantidad")
                 .setPositiveButton("Add", (dialog, which) -> {
                     String quantityStr = etQuantity.getText().toString().trim();
                     if (!quantityStr.isEmpty()) {
                         int quantity = Integer.parseInt(quantityStr);
-                        double amount = product.getPrice() * quantity;
-                        totalAmount += amount;
-                        tvTotalAmount.setText(String.format("Total: $%.2f", totalAmount));
-                        saveSale(product, quantity, amount);
+                        if (quantity <= product.getQuantity()) {
+                            double amount = product.getPrice() * quantity;
+                            totalAmount += amount;
+                            tvTotalAmount.setText(String.format("Total: $%.2f", totalAmount));
+                            saveSale(product, quantity, amount);
+                            updateProductQuantity(product, quantity);
+                        } else {
+                            Toast.makeText(SaleActivity.this, "Stock insuficiente", Toast.LENGTH_SHORT).show();
+                        }
                     } else {
-                        Toast.makeText(SaleActivity.this, "Please enter a quantity", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SaleActivity.this, "Por favor, introduzca una cantidad", Toast.LENGTH_SHORT).show();
                     }
                 })
-                .setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss())
+                .setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss())
                 .create()
                 .show();
     }
@@ -97,6 +101,15 @@ public class SaleActivity extends AppCompatActivity {
         values.put("price", product.getPrice());
         values.put("amount", amount);
         db.insert("sale", null, values);
+        db.close();
+    }
+
+    private void updateProductQuantity(Product product, int quantitySold) {
+        SQLiteDatabase db = new DatabaseHelper(this).getWritableDatabase();
+        int newQuantity = product.getQuantity() - quantitySold;
+        ContentValues values = new ContentValues();
+        values.put("quantity", newQuantity);
+        db.update("products", values, "id = ?", new String[]{String.valueOf(product.getId())});
         db.close();
     }
 

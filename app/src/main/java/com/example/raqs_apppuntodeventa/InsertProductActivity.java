@@ -70,7 +70,7 @@ public class InsertProductActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             } else {
-                Toast.makeText(this, "Error loading image", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Error al cargar la imagen", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -88,7 +88,7 @@ public class InsertProductActivity extends AppCompatActivity {
         String quantity = etProductQuantity.getText().toString().trim();
 
         if (name.isEmpty() || price.isEmpty() || quantity.isEmpty() || imageBase64.isEmpty()) {
-            Toast.makeText(this, "Please fill in all fields and select an image", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Por favor, rellene todos los campos y seleccione una imagen", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -101,7 +101,7 @@ public class InsertProductActivity extends AppCompatActivity {
         values.put("date_added", new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date()));
         db.insert("products", null, values);
         db.close();
-        Toast.makeText(this, "Product added successfully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Producto añadido con éxito", Toast.LENGTH_SHORT).show();
         finish();
     }
 }

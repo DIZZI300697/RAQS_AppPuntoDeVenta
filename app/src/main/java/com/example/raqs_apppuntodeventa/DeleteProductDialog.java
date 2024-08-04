@@ -24,10 +24,10 @@ public class DeleteProductDialog extends AppCompatDialogFragment {
         etProductId = view.findViewById(R.id.etProductId);
 
         builder.setView(view)
-                .setTitle("Delete Product")
-                .setNegativeButton("Cancel", (dialogInterface, i) -> {
+                .setTitle("Eliminar Producto")
+                .setNegativeButton("Cancelar", (dialogInterface, i) -> {
                 })
-                .setPositiveButton("Delete", (dialogInterface, i) -> deleteProduct());
+                .setPositiveButton("Eliminar", (dialogInterface, i) -> deleteProduct());
 
         return builder.create();
     }
@@ -36,13 +36,13 @@ public class DeleteProductDialog extends AppCompatDialogFragment {
         String productId = etProductId.getText().toString().trim();
 
         if (productId.isEmpty()) {
-            Toast.makeText(getActivity(), "Please enter a product ID", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Por favor, introduzca el ID del producto", Toast.LENGTH_SHORT).show();
             return;
         }
 
         SQLiteDatabase db = new DatabaseHelper(getActivity()).getWritableDatabase();
         db.delete("products", "id = ?", new String[]{productId});
         db.close();
-        Toast.makeText(getActivity(), "Product deleted successfully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Producto eliminado exitosamente", Toast.LENGTH_SHORT).show();
     }
 }

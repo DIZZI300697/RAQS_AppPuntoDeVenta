@@ -32,15 +32,21 @@ public class FinalizeSaleActivity extends AppCompatActivity {
     private void loadSaleDetails() {
         saleDetailList = new ArrayList<>();
         SQLiteDatabase db = new DatabaseHelper(this).getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM sale", null);
+
+        String query = "SELECT s.product_id, s.quantity, s.price, s.amount, p.name " +
+                "FROM sale s JOIN products p ON s.product_id = p.id";
+        Cursor cursor = db.rawQuery(query, null);
+
         if (cursor.moveToFirst()) {
             do {
                 int productId = cursor.getInt(0);
                 int quantity = cursor.getInt(1);
                 double price = cursor.getDouble(2);
                 double amount = cursor.getDouble(3);
+                String productName = cursor.getString(4);
+
                 totalAmount += amount;
-                saleDetailList.add(new SaleDetail(productId, quantity, price, amount));
+                saleDetailList.add(new SaleDetail(productId, productName, quantity, price, amount));
             } while (cursor.moveToNext());
         }
         cursor.close();

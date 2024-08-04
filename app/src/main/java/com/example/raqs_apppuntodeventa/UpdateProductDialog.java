@@ -27,10 +27,10 @@ public class UpdateProductDialog extends AppCompatDialogFragment {
         etProductQuantity = view.findViewById(R.id.etProductQuantity);
 
         builder.setView(view)
-                .setTitle("Update Product")
-                .setNegativeButton("Cancel", (dialogInterface, i) -> {
+                .setTitle("Actualizar Producto")
+                .setNegativeButton("Cancelar", (dialogInterface, i) -> {
                 })
-                .setPositiveButton("Update", (dialogInterface, i) -> updateProduct());
+                .setPositiveButton("Actualizar", (dialogInterface, i) -> updateProduct());
 
         return builder.create();
     }
@@ -41,7 +41,7 @@ public class UpdateProductDialog extends AppCompatDialogFragment {
         String quantity = etProductQuantity.getText().toString().trim();
 
         if (productId.isEmpty() || price.isEmpty() || quantity.isEmpty()) {
-            Toast.makeText(getActivity(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Por favor rellena todos los campos", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -51,6 +51,6 @@ public class UpdateProductDialog extends AppCompatDialogFragment {
         values.put("quantity", quantity);
         db.update("products", values, "id = ?", new String[]{productId});
         db.close();
-        Toast.makeText(getActivity(), "Product updated successfully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Producto actualizado exitosamente", Toast.LENGTH_SHORT).show();
     }
 }
