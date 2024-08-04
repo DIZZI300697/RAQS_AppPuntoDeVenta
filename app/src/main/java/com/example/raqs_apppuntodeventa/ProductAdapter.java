@@ -45,16 +45,17 @@ public class ProductAdapter extends BaseAdapter {
 
         Product product = (Product) getItem(position);
 
+        TextView tvID = convertView.findViewById(R.id.tvProductID);
         TextView tvName = convertView.findViewById(R.id.tvProductName);
         TextView tvPrice = convertView.findViewById(R.id.tvProductPrice);
         TextView tvQuantity = convertView.findViewById(R.id.tvProductQuantity);
         ImageView ivImage = convertView.findViewById(R.id.ivProductImage);
 
+        tvID.setText("ID: " + product.getId());
         tvName.setText(product.getName());
         tvPrice.setText(String.format("$%.2f", product.getPrice()));
         tvQuantity.setText(String.valueOf(product.getQuantity()));
 
-        // Decode base64 image
         byte[] decodedString = Base64.decode(product.getImage(), Base64.DEFAULT);
         Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
         ivImage.setImageBitmap(decodedByte);
