@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,7 +30,7 @@ public class FinalizeSaleActivity extends AppCompatActivity {
         tvTotalAmount = findViewById(R.id.tvTotalAmount);
         Button btnReturnToMenu = findViewById(R.id.btnReturnToMenu);
 
-        btnReturnToMenu.setOnClickListener(v -> goToMainMenu());
+        btnReturnToMenu.setOnClickListener(v -> finalizeSale());
 
         loadSaleDetails();
     }
@@ -62,7 +63,13 @@ public class FinalizeSaleActivity extends AppCompatActivity {
         tvTotalAmount.setText(String.format("Total: $%.2f", totalAmount));
     }
 
-    private void goToMainMenu() {
+    private void finalizeSale() {
+        Toast.makeText(this, "¡Gracias por tu compra!", Toast.LENGTH_LONG).show();
+
+        SQLiteDatabase db = new DatabaseHelper(this).getWritableDatabase();
+        db.delete("sale", null, null);
+        db.close();
+
         Intent intent = new Intent(this, MainMenuActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
