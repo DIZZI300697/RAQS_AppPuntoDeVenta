@@ -38,6 +38,9 @@ public class SaleActivity extends AppCompatActivity {
 
         Button btnFinalizeSale = findViewById(R.id.btnFinalizeSale);
         btnFinalizeSale.setOnClickListener(v -> finalizeSale());
+
+        Button btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(v -> finish());
     }
 
     private void loadProducts() {

@@ -29,8 +29,11 @@ public class FinalizeSaleActivity extends AppCompatActivity {
         lvSaleDetails = findViewById(R.id.lvSaleDetails);
         tvTotalAmount = findViewById(R.id.tvTotalAmount);
         Button btnReturnToMenu = findViewById(R.id.btnReturnToMenu);
+        Button btnBack = findViewById(R.id.btnBack);
 
         btnReturnToMenu.setOnClickListener(v -> finalizeSale());
+
+        btnBack.setOnClickListener(v -> goToPreviousActivity());
 
         loadSaleDetails();
     }
@@ -73,6 +76,10 @@ public class FinalizeSaleActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainMenuActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+        finish();
+    }
+
+    private void goToPreviousActivity() {
         finish();
     }
 }

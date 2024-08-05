@@ -9,13 +9,14 @@
         android:id="@+id/lvSaleDetails"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:layout_above="@+id/totalContainer" />
+        android:layout_above="@+id/totalContainer"
+        android:layout_marginBottom="11dp"
+        android:layout_weight="1" />
 
     <RelativeLayout
         android:id="@+id/totalContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="403dp"
+        android:layout_height="97dp"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:padding="8dp">
@@ -24,19 +25,36 @@
             android:id="@+id/tvTotalAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
             android:text="Total: $0.00"
-            android:textSize="18sp"
-            android:textStyle="bold"
             android:textColor="@color/black"
-            android:layout_alignParentStart="true" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#800020"
+            android:text="Regresar"
+            android:textColor="#FFF8E7" />
 
         <Button
             android:id="@+id/btnReturnToMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Finalizar Venta"
             android:backgroundTint="#800020"
             android:textColor="#FFF8E7"
-            android:layout_alignParentEnd="true" />
+            android:text="Finalizar Venta"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="10dp"
+            android:layout_toEndOf="@+id/btnBack" />
+
     </RelativeLayout>
 </RelativeLayout>
