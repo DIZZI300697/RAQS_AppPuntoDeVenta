@@ -6,12 +6,28 @@
     android:background="@drawable/fondo2"
     android:padding="20dp">
 
+    <!-- Encabezado de la pantalla de ventas -->
+    <TextView
+        android:id="@+id/tvSaleHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Productos Disponibles"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textStyle="bold"/>
+
+    <!-- Lista de productos -->
     <ListView
         android:id="@+id/lvProducts"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
 
+    <!-- Total de la venta -->
     <TextView
         android:id="@+id/tvTotalAmount"
         android:layout_width="match_parent"
@@ -19,8 +35,10 @@
         android:padding="8dp"
         android:text="Total: $0.00"
         android:textColor="@color/black"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
+    <!-- Botón para finalizar la venta -->
     <Button
         android:id="@+id/btnFinalizeSale"
         android:layout_width="match_parent"
@@ -28,6 +46,7 @@
         android:backgroundTint="#6D214F"
         android:textColor="@color/white"
         android:textSize="17sp"
-        android:text="Finalizar Venta" />
+        android:text="Comprar"
+        android:layout_marginTop="10dp" />
 
 </LinearLayout>

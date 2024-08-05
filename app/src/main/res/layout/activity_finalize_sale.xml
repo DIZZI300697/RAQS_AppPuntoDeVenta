@@ -34,7 +34,7 @@
             android:id="@+id/btnReturnToMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Regresar al Menú"
+            android:text="Finalizar Venta"
             android:backgroundTint="#800020"
             android:textColor="#FFF8E7"
             android:layout_alignParentEnd="true" />
