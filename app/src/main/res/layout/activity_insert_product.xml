@@ -58,4 +58,20 @@
         android:textSize="17sp"
         android:text="Guardar Producto" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start|bottom"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Regresar"
+            android:backgroundTint="#800020"
+            android:textColor="#FFF8E7"
+            android:layout_gravity="bottom"/>
+    </LinearLayout>
 </LinearLayout>

@@ -1,40 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/fondo4"
-    android:gravity="center"
     android:padding="30dp">
 
-    <Button
-        android:id="@+id/btnInsertProduct"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#228B22"
-        android:textColor="#FFF8E7"
-        android:textSize="17sp"
-        android:layout_marginBottom="15dp"
-        android:text="Insertar Producto" />
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnInsertProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#228B22"
+            android:textColor="#FFF8E7"
+            android:textSize="17sp"
+            android:layout_marginBottom="15dp"
+            android:text="Insertar Producto" />
+
+        <Button
+            android:id="@+id/btnDeleteProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#800020"
+            android:textColor="#FADCD9"
+            android:textSize="17sp"
+            android:layout_marginBottom="15dp"
+            android:text="Eliminar Producto" />
+
+        <Button
+            android:id="@+id/btnUpdateProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4A4A4A"
+            android:textColor="#F5F5DC"
+            android:textSize="17sp"
+            android:layout_marginBottom="15dp"
+            android:text="Actualizar Producto" />
+    </LinearLayout>
 
     <Button
-        android:id="@+id/btnDeleteProduct"
-        android:layout_width="match_parent"
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_margin="0dp"
+        android:text="Regresar"
         android:backgroundTint="#800020"
-        android:textColor="#FADCD9"
-        android:textSize="17sp"
-        android:layout_marginBottom="15dp"
-        android:text="Eliminar Producto" />
-
-    <Button
-        android:id="@+id/btnUpdateProduct"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#4A4A4A"
-        android:textColor="#F5F5DC"
-        android:textSize="17sp"
-        android:layout_marginBottom="15dp"
-        android:text="Actualizar Producto" />
-
-</LinearLayout>
+        android:textColor="#FFF8E7"/>
+</RelativeLayout>

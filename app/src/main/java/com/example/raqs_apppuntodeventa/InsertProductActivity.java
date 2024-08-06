@@ -30,7 +30,7 @@ public class InsertProductActivity extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
 
     private EditText etProductName, etProductPrice, etProductQuantity;
-    private Button btnSelectImage, btnSaveProduct;
+    private Button btnSelectImage, btnSaveProduct, btnBack;
     private ImageView ivProductImage;
     private String imageBase64 = "";
 
@@ -45,9 +45,11 @@ public class InsertProductActivity extends AppCompatActivity {
         btnSelectImage = findViewById(R.id.btnSelectImage);
         btnSaveProduct = findViewById(R.id.btnSaveProduct);
         ivProductImage = findViewById(R.id.ivProductImage);
+        btnBack = findViewById(R.id.btnBack);
 
         btnSelectImage.setOnClickListener(v -> selectImage());
         btnSaveProduct.setOnClickListener(v -> saveProduct());
+        btnBack.setOnClickListener(v -> finish()); // Finaliza la actividad y regresa a la anterior
     }
 
     private void selectImage() {
@@ -105,3 +107,4 @@ public class InsertProductActivity extends AppCompatActivity {
         finish();
     }
 }
+

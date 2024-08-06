@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class InventoryActivity extends AppCompatActivity {
 
-    private Button btnInsertProduct, btnDeleteProduct, btnUpdateProduct;
+    private Button btnInsertProduct, btnDeleteProduct, btnUpdateProduct, btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +18,12 @@ public class InventoryActivity extends AppCompatActivity {
         btnInsertProduct = findViewById(R.id.btnInsertProduct);
         btnDeleteProduct = findViewById(R.id.btnDeleteProduct);
         btnUpdateProduct = findViewById(R.id.btnUpdateProduct);
+        btnBack = findViewById(R.id.btnBack);
 
         btnInsertProduct.setOnClickListener(v -> startActivity(new Intent(this, InsertProductActivity.class)));
         btnDeleteProduct.setOnClickListener(v -> openDeleteProductDialog());
         btnUpdateProduct.setOnClickListener(v -> openUpdateProductDialog());
+        btnBack.setOnClickListener(v -> finish()); // Termina esta actividad y regresa a la anterior
     }
 
     private void openDeleteProductDialog() {
@@ -34,3 +36,4 @@ public class InventoryActivity extends AppCompatActivity {
         updateProductDialog.show(getSupportFragmentManager(), "UpdateProductDialog");
     }
 }
+
